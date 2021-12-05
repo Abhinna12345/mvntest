@@ -1,5 +1,5 @@
 node{
- agent (docker (image 'maven 3.3.3') )
+ agent { docker { image 'maven:3.3.3' } }
 	 stage('Git Checkout'){
 		git 'https://github.com/Abhinna12345/mvntest'  
 	 }
