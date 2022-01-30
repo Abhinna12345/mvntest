@@ -1,6 +1,6 @@
-node{
+node('ubuntu-agent1'){
 
-   def tomcatBin = '${CATALINA_HOME}\\bin'
+   def tomcatBin = '${CATALINA_HOME}/bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
      git 'https://github.com/abhinna1234/mvntest.git'
