@@ -26,9 +26,4 @@ node{
    stage('Deploy to Tomcat'){
      "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
    }
-      stage ('Start Tomcat Server') {
-         sleep(time:5,unit:"SECONDS") 
-         "${tomcatBin}\\startup.bat"
-         sleep(time:100,unit:"SECONDS")
-   }
 }
