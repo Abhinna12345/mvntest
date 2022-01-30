@@ -1,6 +1,6 @@
 node('ubuntu-agent1'){
    stage('SCM Checkout'){
-     git 'https://github.com/abhinna1234/mvntest.git'
+     git-ubuntu 'https://github.com/abhinna1234/mvntest.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
