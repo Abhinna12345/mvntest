@@ -13,7 +13,7 @@ node{
    }
    stage('Check-war-file'){
       // Get maven home path
-      "dir"
+      bat "dir"
    }
 
 /*   stage ('Stop Tomcat Server') {
@@ -29,7 +29,8 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
-     
+      bat "echo ${tomcatWeb}"
+    
      "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
    }
 }
