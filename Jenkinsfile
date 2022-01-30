@@ -9,8 +9,13 @@ node{
    stage('Compile-Package-create-war-file'){
       // Get maven home path
       def mvnHome =  tool name: 'MAVEN', type: 'maven'   
-        "${mvnHome}\\bin\\mvn package"
-      }
+      "${mvnHome}\\bin\\mvn package"
+   }
+   stage('Check-war-file'){
+      // Get maven home path
+      "dir"
+   }
+
 /*   stage ('Stop Tomcat Server') {
                bat ''' @ECHO OFF
                wmic process list brief | find /i "tomcat" > NUL
@@ -24,6 +29,7 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
+     
      "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
    }
 }
