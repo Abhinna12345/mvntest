@@ -3,7 +3,7 @@ node('ubuntu-agent1'){
    def tomcatBin = '${CATALINA_HOME}/bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
-     sh "git 'https://github.com/abhinna1234/mvntest.git'"
+     git 'https://github.com/abhinna1234/mvntest.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
