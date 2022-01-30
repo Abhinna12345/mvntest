@@ -29,8 +29,7 @@ node{
    }*/
    stage('Deploy to Tomcat'){
       bat "echo ${CATALINA_HOME}"
-      bat "echo ${tomcatWeb}"
       bat "dir target"
-     bat "copy target\\mvntest.war \"${${CATALINA_HOME}}\\webapps\\mvntest.war\""
+     bat "copy target\\mvntest.war \"${CATALINA_HOME}\\webapps\\mvntest.war\""
    }
 }
