@@ -24,7 +24,7 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
-     "copy target\mvntest.war \"${tomcatWeb}\mvntest.war\""
+     "copy target\\mvntest.war \"${tomcatWeb}\mvntest.war\""
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
