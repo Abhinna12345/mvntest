@@ -31,6 +31,6 @@ node{
    stage('Deploy to Tomcat'){
       bat "echo ${tomcatWeb}"
     
-     "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
+     bat "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
    }
 }
