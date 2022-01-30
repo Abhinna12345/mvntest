@@ -9,7 +9,7 @@ node{
    stage('Compile-Package-create-war-file'){
       // Get maven home path
       def mvnHome =  tool name: 'MAVEN', type: 'maven'   
-      "${mvnHome}\\bin\\mvn package"
+      bat "mvn package"
    }
    stage('Check-war-file'){
       // Get maven home path
