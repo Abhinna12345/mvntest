@@ -4,7 +4,7 @@ node{
    def tomcatBin = '${catalina.base}\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
-     git 'https://github.com/abhinna1234/mvn1.git'
+     git 'https://github.com/abhinna1234/mvntest.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
@@ -24,7 +24,7 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
-     bat "copy target\\mvn1.war \"${tomcatWeb}\\mvn1.war\""
+     bat "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
