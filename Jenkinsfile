@@ -1,7 +1,7 @@
 node{
 
-   def tomcatWeb = '${CATALINA_HOME}\\webapps'
-   def tomcatBin = '${CATALINA_HOME}\\bin'
+   def tomcatWeb = '${env.CATALINA_HOME}\\webapps'
+   def tomcatBin = '${env.CATALINA_HOME}\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
      git 'https://github.com/abhinna1234/mvntest.git'
