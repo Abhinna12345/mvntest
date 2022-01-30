@@ -1,7 +1,6 @@
 node{
 
-   def tomcatWeb = '${env.CATALINA_HOME}\\webapps'
-   def tomcatBin = '${env.CATALINA_HOME}\\bin'
+   def tomcatBin = '${CATALINA_HOME}\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
      git 'https://github.com/abhinna1234/mvntest.git'
@@ -29,8 +28,9 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
+      bat "echo ${CATALINA_HOME}"
       bat "echo ${tomcatWeb}"
-    
-     bat "copy target\\mvntest.war \"${tomcatWeb}\\mvntest.war\""
+      bat "dir target"
+     bat "copy target\\mvntest.war \"${${CATALINA_HOME}}\\webapps\\mvntest.war\""
    }
 }
